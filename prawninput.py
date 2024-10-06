@@ -2,6 +2,9 @@
 import streamlit as st
 import pandas as pd
 
+import os
+file_path =  "inputdata.txt"  # Streamlit 서버가 실행되는 디렉토리에 생성됩니다.
+
 # 입력 폼 생성
 #st.subheader("_Streamlit_ is :blue[cool] :sunglasses:")
 #st.write ("Contact Agent,  more information ")
@@ -27,10 +30,13 @@ if submit:
 # **데이터 저장**: CSV 파일에 저장합니다
   
 import csv
+import os
+file_path =  "inputdata.csv"  # Streamlit 서버가 실행되는 디렉토리에 생성됩니다.
 
 if submit:
        with open("inputdata.csv", "a", newline="") as file:
            writer = csv.writer(file)
            writer.writerow(["Frawn Farm ", name, phone, email, message])
        #st.success("데이터가 저장되었습니다.")
+
 
